@@ -1,0 +1,40 @@
+﻿########################################
+######### WW1 REBUFFED EVENTS ##########
+########################################
+
+add_namespace = ww1rebuffed
+
+#Initial event
+country_event = {
+	id = ww1rebuffed.1 
+    title = ww1rebuffed.1.t 
+    desc = ww1rebuffed.1.d 
+	picture = GFX_report_event_election_vote 
+
+	is_triggered_only = yes
+
+	fire_only_once = yes 
+	
+    option = { 
+		name = ww1rebuffed.1.a # I like you
+                add_political_power = 5
+		country_event = { id = ww1rebuffed.2 }
+	}
+}
+
+#Standalone idea
+country_event = {
+	id = ww1rebuffed.2 
+    title = ww1rebuffed.2.t 
+    desc = ww1rebuffed.2.d 
+	picture = GFX_news_event_006 
+
+	is_triggered_only = yes
+
+	fire_only_once = yes 
+	
+    option = { 
+		name = ww1rebuffed.2.a # I like you
+                add_political_power = -5
+	}
+}

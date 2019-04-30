@@ -1,0 +1,22 @@
+﻿
+units= {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Flota Marii Negre"			
+		naval_base = 657 # Constanta
+		task_force = {				
+			name = "Flota Romania de Mare"			
+			location = 657 # Constanta
+			ship = { name = "NMS Elisabeta" definition = light_cruiser equipment = { light_cruiser_1890 = { amount = 1 owner = ROM } } }
+		}				
+	}
+} 
+
+
+
+#########################
+## STARTING PRODUCTION ##
+#########################
+
+##### there are none ######

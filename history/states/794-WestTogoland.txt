@@ -1,0 +1,14 @@
+state={
+	id=794
+	name="STATE_794"
+	manpower=200000
+	state_category=rural
+	provinces={ 8039 12785 }
+	history={
+		owner=ENG
+		buildings={
+			infrastructure=3
+			#12785={ naval_base=1  }
+			}
+		}
+	}

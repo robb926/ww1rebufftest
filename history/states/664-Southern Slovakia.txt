@@ -1,0 +1,26 @@
+state={
+	id=664
+	name="STATE_664"
+	manpower = 854300
+	state_category=town
+	provinces={ 3565 3716 6561 6573 9537 11679 }
+	resources={
+		wood=0
+		steel=29
+		}
+	history={
+
+		owner=AUH
+		controller=AUH
+		add_core_of=CZE
+		add_core_of=AUH
+		add_claim_by=HUN
+		victory_points={
+			6573 1
+		}
+		buildings={
+			infrastructure=6
+			industrial_complex=3
+			}
+		}
+	}

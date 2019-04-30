@@ -1,0 +1,14 @@
+state={
+	id=804
+	name="STATE_804" # Syrmia
+	manpower = 412000
+	state_category=city
+	provinces={ 11580 }
+	history={
+	owner = AUH
+	add_core_of = SER
+	add_core_of = AUH
+	buildings = {
+	infrastructure = 4
+	}
+}

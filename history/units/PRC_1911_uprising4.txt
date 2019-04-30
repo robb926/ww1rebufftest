@@ -1,0 +1,55 @@
+﻿###################################################################
+
+units = {
+	division= { 
+			name = "1. Zhejiang Revolutionary Army"
+			location=7191 # Hangzhou
+			division_template="Qibing Shi"
+			start_experience_factor=0.5
+			}
+	
+	
+	division= { 
+			name = "1. Anhui Revolutionary Army"
+			location=3992 # Nanchang
+			division_template="Qibing Shi"
+			start_experience_factor=0.5
+			}
+	
+	
+	division= { 
+			name = "1. Jiangsu Revolutionary Army"
+			location=11913 # Nanjing
+			division_template="Qibing Shi"
+			start_experience_factor=0.5
+			}
+	
+	
+	division= { 
+			name = "1. Shanghai Revolutionary Army"
+			location=7014 # Shanghai
+			division_template="Qibing Shi"
+			start_experience_factor=0.5
+			}
+	
+	
+	division= { 
+			name = "2. Shanghai Revolutionary Army"
+			location=7014 # Shanghai
+			division_template="Qibing Shi"
+			start_experience_factor=0.5
+			}
+	
+	
+	division= { 
+			name = "3. Shanghai Revolutionary Army"
+			location=7014 # Shanghai
+			division_template="Qibing Shi"
+			start_experience_factor=0.5
+			}
+	
+	}
+air_wings = { 
+	}
+instant_effect = {
+	}

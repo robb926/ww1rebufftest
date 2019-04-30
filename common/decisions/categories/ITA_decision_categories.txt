@@ -1,0 +1,144 @@
+################
+##### ITA ######
+################
+
+ITA_indecisive_ally_ita_category = {
+	
+	icon = generic_crisis
+
+	allowed = {
+		original_tag = ITA
+		ITA = { has_completed_focus = ITA_ww1_europe_focus }
+	}
+
+	picture = GFX_decision_cat_picture_indecisive_ally
+	priority = {
+		base = 10
+	}
+	
+	custom_icon = {
+		tag = FRA
+		value = fra_indecisive_ally_icon_value
+		desc = fra_indecisive_ally_full_influence_breakdown
+
+		visible = {
+			country_exists = FRA
+		}
+	}
+	
+	custom_icon = {
+		tag = GER
+		value = ger_indecisive_ally_icon_value
+		desc = ger_indecisive_ally_full_influence_breakdown
+
+		visible = {
+			country_exists = GER
+		}
+	}
+
+	visible_when_empty = yes
+
+	visible = {
+		NOT = { ITA = { has_completed_focus = ITA_ww1_back_ger } }
+		NOT = { ITA = { has_completed_focus = ITA_ww1_back_france } }
+		NOT = { ITA = { has_war_with = FRA } }
+		NOT = { ITA = { has_war_with = GER } }
+		ITA = {
+			exists = yes
+			is_subject = no
+		}
+	}
+}
+
+ITA_indecisive_ally_ger_category = {
+	
+	icon = generic_crisis
+
+	allowed = {
+		original_tag = GER
+		ITA = { has_completed_focus = ITA_ww1_europe_focus }
+	}
+
+	picture = GFX_decision_cat_picture_indecisive_ally
+	priority = {
+		base = 10
+	}
+	
+	custom_icon = {
+		tag = FRA
+		value = fra_indecisive_ally_icon_value
+		desc = fra_indecisive_ally_full_influence_breakdown
+
+	}
+	
+	custom_icon = {
+		tag = GER
+		value = ger_indecisive_ally_icon_value
+		desc = ger_indecisive_ally_full_influence_breakdown
+
+		visible = {
+		GER = { has_government = neutrality }
+		}
+	}
+
+	visible_when_empty = yes
+
+	visible = {
+		NOT = { ITA = { has_completed_focus = ITA_ww1_back_ger } }
+		NOT = { ITA = { has_completed_focus = ITA_ww1_back_france } }
+		NOT = { ITA = { has_war_with = FRA } }
+		NOT = { ITA = { has_war_with = GER } }
+		ITA = {
+			exists = yes
+			is_subject = no
+		}
+	}
+}
+
+ITA_indecisive_ally_fra_category = {
+	
+	icon = generic_crisis
+
+	allowed = {
+		original_tag = FRA
+		ITA = { has_completed_focus = ITA_ww1_europe_focus }
+	}
+
+	picture = GFX_decision_cat_picture_indecisive_ally
+	priority = {
+		base = 10
+	}
+	
+	custom_icon = {
+		tag = FRA
+		value = fra_indecisive_ally_icon_value
+		desc = fra_indecisive_ally_full_influence_breakdown
+
+		visible = {
+			country_exists = FRA
+		}
+	}
+	
+	custom_icon = {
+		tag = GER
+		value = ger_indecisive_ally_icon_value
+		desc = ger_indecisive_ally_full_influence_breakdown
+
+		visible = {
+			country_exists = GER
+		}
+	}
+
+	visible_when_empty = yes
+
+	visible = {
+		NOT = { ITA = { has_completed_focus = ITA_ww1_back_ger } }
+		NOT = { ITA = { has_completed_focus = ITA_ww1_back_france } }
+		NOT = { ITA = { has_war_with = FRA } }
+		NOT = { ITA = { has_war_with = GER } }
+		ITA = {
+			exists = yes
+			is_subject = no
+		}
+	}
+}

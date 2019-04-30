@@ -1,0 +1,37 @@
+italoturkish_war = {
+	enable = {
+		original_tag = ITA
+		ITA = {
+			has_country_flag = italian_libya_war
+			NOT = {
+				has_country_flag = ITA_Lib_War_End
+			}
+		}
+	}
+	abort = {
+		has_country_flag = ITA_Lib_War_End
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = africa
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = area_priority
+		id = middle_east
+		value = -1000 ##dont talk ANZACs that Galipolli will fail haha##
+	}
+	ai_strategy = {
+		type = area_priority
+		id = europe
+		value = -1000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = TUR
+		value = 1000
+	}
+}

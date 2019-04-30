@@ -1,0 +1,116 @@
+﻿
+###################################################################
+
+division_template = {
+	name = "Gyaloghadosztály"
+	division_names_group = HUN_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Gyalogdandár"
+	division_names_group = HUN_INF_02
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+	}
+	priority = 0
+}
+
+division_template = {
+	name = "Huszár Dandár"
+	division_names_group = HUN_CAV_01
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 1 y = 0 }
+	}
+}
+
+###################################################################
+
+units = {
+	division= { 
+			name = "1. Gyaloghadosztály"
+			location = 6716 #
+			division_template="Gyaloghadosztály"
+			start_experience_factor=0.04
+	}	
+	
+	division= { 
+			name = "1. Gyalogdandár"
+			location = 11644 #
+			division_template="Gyalogdandár"
+			start_experience_factor=0.02
+	}
+
+	division= { 
+			name = "1. Huszár Dandár"
+			location = 614 #
+			division_template="Huszár Dandár"
+			start_experience_factor=0.03
+	}
+
+	division= { 
+			name = "2. Huszár Dandár"
+			location = 614 #
+			division_template="Huszár Dandár"
+			start_experience_factor=0.02
+	}
+
+	division= { 
+			name = "2. Gyaloghadosztály"
+			location = 614 #
+			division_template="Gyaloghadosztály"
+			start_experience_factor=0.02
+	}
+
+	division= { 
+			name = "2. Gyalogdandár"
+			location = 614 #
+			division_template="Gyalogdandár"
+			start_experience_factor=0.02
+	}
+
+	division= { 
+			name = "3. Gyalogdandár"
+			location = 614 #
+			division_template="Gyalogdandár"
+			start_experience_factor=0.02
+	}
+
+	division= { 
+			name = "3. Gyaloghadosztály"
+			location = 3709 #
+			division_template="Gyaloghadosztály"
+			start_experience_factor=0.03
+	}
+
+	division= { 
+			name = "4. Gyaloghadosztály"
+			location = 3709 #
+			division_template="Gyaloghadosztály"
+			start_experience_factor=0.03
+	}
+
+	division= { 
+			name = "5. Gyaloghadosztály"
+			location = 3709 #
+			division_template="Gyaloghadosztály"
+			start_experience_factor=0.03
+	}
+}
+
+air_wings = { 
+
+}
+
+instant_effect = {
+
+}

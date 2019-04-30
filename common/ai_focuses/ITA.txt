@@ -1,0 +1,15 @@
+﻿ai_historical_focus_list_ITA = {
+	ai_national_focuses = {
+		ITA_ww1_italian_expansionism
+		ITA_ww1_italian_development
+		ITA_ww1_industrial_effort
+		ITA_ww1_infrastructure_effort
+		ITA_ww1_europe_focus
+		ITA_ww1_support_republic
+		ITA_ww1_italian_highways
+		ITA_ww1_libyan_claims
+		ITA_ww1_army_effort
+		ITA_ww1_production_effort
+		ITA_ww1_infrastructure_effort_2
+	}
+}

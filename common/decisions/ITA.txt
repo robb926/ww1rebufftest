@@ -1,0 +1,626 @@
+ITA_indecisive_ally_fra_category = {
+
+	FRA_demand_reduced_italian_relations_with_germany = {
+
+		icon = eng_trade_unions_demand
+
+		allowed = {
+			tag = FRA
+		}
+
+		available = {
+			has_government = democratic
+			GER = { has_government = neutrality }
+			ITA = { has_completed_focus = ITA_ww1_europe_focus }
+		}
+
+		target_trigger = {
+			FROM = {
+				tag = ITA
+			}
+		}
+
+		days_remove = 20
+
+		cost = 10
+
+		fire_only_once = no
+
+		ai_will_do = {
+			factor = 0.03
+			modifier = {
+				factor = 2
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 10
+				date > 1914.07.01
+			}
+			modifier = {
+				factor = 10
+				date > 1916.01.01
+			}
+			modifier = {
+				factor = 2
+				ITA = {
+					check_variable = { var = FRA.fra_indecisive_ally_influence value = 20 compare = greater_than_or_equals }
+					check_variable = { var = fra_temp_diplo_influence value = 10 compare = greater_than_or_equals }
+				} 
+			}
+			modifier = {
+				factor = 0
+				ITA = {
+					check_variable = { var = fra_diplo_influence value = 10 compare = greater_than_or_equals }
+					NOT = { check_variable = { var = FRA.fra_indecisive_ally_influence value = 20 compare = greater_than_or_equals } }
+				}
+			}
+			modifier = {
+				factor = 0
+				ITA = {
+					focus_progress = {
+						focus = ITA_ww1_back_ger
+						progress > 0
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				ITA = {
+					focus_progress = {
+						focus = ITA_ww1_back_france
+						progress > 0
+					}
+				}
+			}
+		}
+
+		visible = {
+			tag = FRA
+		}
+
+		complete_effect = {
+		}
+
+		remove_effect = {
+			add_to_variable = { var = fra_indecisive_ally_influence value = 5 }
+			ITA = {
+				set_variable = { var = fra_temp_diplo_influence value = FRA.fra_indecisive_ally_influence }
+				subtract_from_variable = { var = fra_temp_diplo_influence value = GER.ger_indecisive_ally_influence }
+				set_variable = { var = ger_temp_diplo_influence value = GER.ger_indecisive_ally_influence }
+				subtract_from_variable = { var = ger_temp_diplo_influence value = FRA.fra_indecisive_ally_influence }
+				add_to_variable = { var = indecisive_ally_influence_pp_total value = 10 }
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						date < 1914.07.01
+					}
+					random_list = {
+						10 = {
+							modifier = {
+								factor = 2
+								is_historical_focus_on = yes
+							}
+							set_country_flag = { flag = ITA_indecisive_ally_ai_timer_flag value = 1 days = 50 }
+						}
+						10 = {
+							modifier = {
+								factor = 2
+								is_historical_focus_on = yes
+							}
+							set_country_flag = { flag = ITA_indecisive_ally_ai_timer_flag value = 1 days = 55 }
+						}
+						10 = {
+							modifier = {
+								factor = 1.5
+								is_historical_focus_on = yes
+							}
+							set_country_flag = { flag = ITA_indecisive_ally_ai_timer_flag value = 1 days = 60 }
+						}
+						10 = {
+							set_country_flag = { flag = ITA_indecisive_ally_ai_timer_flag value = 1 days = 65 }
+						}
+						10 = {
+							set_country_flag = { flag = ITA_indecisive_ally_ai_timer_flag value = 1 days = 70 }
+						}
+						10 = {
+							modifier = {
+								factor = 0.8
+								is_historical_focus_on = yes
+							}
+							set_country_flag = { flag = ITA_indecisive_ally_ai_timer_flag value = 1 days = 75 }
+						}
+						10 = {
+							modifier = {
+								factor = 0.5
+								is_historical_focus_on = yes
+							}
+							set_country_flag = { flag = ITA_indecisive_ally_ai_timer_flag value = 1 days = 80 }
+						}
+					}
+				}
+				if = {
+					limit = {
+						ITA = {
+							check_variable = { var = fra_temp_diplo_influence value = 0 compare = greater_than }
+							OR = {
+								AND = {
+									NOT = { has_country_flag = ITA_indecisive_ally_france_lead_flag }
+									NOT = { has_country_flag = ITA_indecisive_ally_germany_lead_flag }
+								}
+								has_country_flag = ITA_indecisive_ally_germany_lead_flag
+							}
+						}
+					}
+					ITA = {
+						clr_country_flag = ITA_indecisive_ally_germany_lead_flag
+						set_country_flag = ITA_indecisive_ally_france_lead_flag
+					}
+					ITA = { country_event = { id = ww1buff_ita.1 } }
+					GER = { country_event = { id = ww1buff_ita.1 } }
+				}
+				if = {
+					limit = {
+						ITA = {
+							check_variable = { var = ger_temp_diplo_influence value = 0 compare = greater_than }
+							OR = {
+								AND = {
+									NOT = { has_country_flag = ITA_indecisive_ally_france_lead_flag }
+									NOT = { has_country_flag = ITA_indecisive_ally_germany_lead_flag }
+								}
+								has_country_flag = ITA_indecisive_ally_france_lead_flag
+							}
+						}
+					}
+					ITA = {
+						clr_country_flag = ITA_indecisive_ally_france_lead_flag
+						set_country_flag = ITA_indecisive_ally_germany_lead_flag
+					}
+					ITA = { country_event = { id = ww1buff_ita.2 } }
+					FRA = { country_event = { id = ww1buff_ita.2 } }
+				}
+			}
+			custom_effect_tooltip = ITA_indecisive_ally_decisions_tt
+			effect_tooltip = { add_political_power = ITA.indecisive_ally_influence_pp_total }
+		}
+	}
+}
+
+ITA_indecisive_ally_ger_category = {
+
+	GER_demand_reduced_italian_relations_with_france = {
+
+		icon = eng_trade_unions_demand
+
+		allowed = {
+			tag = GER
+		}
+
+		available = {
+			has_government = neutrality
+			FRA = { has_government = democratic }
+			ITA = { has_completed_focus = ITA_ww1_europe_focus }
+		}
+
+		target_trigger = {
+			FROM = {
+				tag = ITA
+			}
+		}
+
+		days_remove = 20
+
+		cost = 10
+
+		fire_only_once = no
+
+		ai_will_do = {
+			factor = 0.01
+			modifier = {
+				factor = 10
+				date > 1914.07.01
+			}
+			modifier = {
+				factor = 10
+				date > 1940.01.01
+			}
+			modifier = {
+				factor = 2
+				ITA = {
+					check_variable = { var = GER.ger_indecisive_ally_influence value = 20 compare = greater_than_or_equals }
+					check_variable = { var = ger_temp_diplo_influence value = 10 compare = greater_than_or_equals }
+				}
+			}
+			modifier = {
+				factor = 0
+				ITA = {
+					check_variable = { var = ger_temp_diplo_influence value = 10 compare = greater_than_or_equals }
+					NOT = { check_variable = { var = GER.ger_indecisive_ally_influence value = 20 compare = greater_than_or_equals } }
+				}
+			}
+			modifier = {
+				factor = 0
+				ITA = {
+					focus_progress = {
+						focus = ITA_ww1_back_france
+						progress > 0
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				ITA = {
+					focus_progress = {
+						focus = ITA_ww1_back_ger
+						progress > 0
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = ITA_indecisive_ally_ai_timer_flag
+				NOT = { date > 1940.01.01 }
+			}
+		}
+
+		visible = {
+			tag = GER
+		}
+
+		complete_effect = {
+		}
+
+		remove_effect = {
+			add_to_variable = { var = ger_indecisive_ally_influence value = 5 }
+			ITA = {
+				set_variable = { var = ger_temp_diplo_influence value = GER.ger_indecisive_ally_influence }
+				subtract_from_variable = { var = ger_temp_diplo_influence value = FRA.fra_indecisive_ally_influence }
+				set_variable = { var = fra_temp_diplo_influence value = FRA.fra_indecisive_ally_influence }
+				subtract_from_variable = { var = fra_temp_diplo_influence value = GER.ger_indecisive_ally_influence }
+				add_to_variable = { var = indecisive_ally_influence_pp_total value = 10 }
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						date < 1914.07.01
+					}
+					random_list = {
+						10 = {
+							set_country_flag = { flag = ITA_indecisive_ally_ai_timer_flag value = 1 days = 50 }
+						}
+						10 = {
+							set_country_flag = { flag = ITA_indecisive_ally_ai_timer_flag value = 1 days = 55 }
+						}
+						10 = {
+							set_country_flag = { flag = ITA_indecisive_ally_ai_timer_flag value = 1 days = 60 }
+						}
+						10 = {
+							set_country_flag = { flag = ITA_indecisive_ally_ai_timer_flag value = 1 days = 65 }
+						}
+						10 = {
+							set_country_flag = { flag = ITA_indecisive_ally_ai_timer_flag value = 1 days = 70 }
+						}
+						10 = {
+							set_country_flag = { flag = ITA_indecisive_ally_ai_timer_flag value = 1 days = 75 }
+						}
+						10 = {
+							set_country_flag = { flag = ITA_indecisive_ally_ai_timer_flag value = 1 days = 80 }
+						}
+					}
+				}
+				if = {
+					limit = {
+						ITA = {
+							check_variable = { var = fra_temp_diplo_influence value = 0 compare = greater_than }
+							OR = {
+								NOT = { has_country_flag = ITA_indecisive_ally_france_lead_flag }
+								has_country_flag = ITA_indecisive_ally_germany_lead_flag
+							}
+						}
+					}
+					ITA = {
+						clr_country_flag = ITA_indecisive_ally_germany_lead_flag
+						set_country_flag = ITA_indecisive_ally_france_lead_flag
+					}
+					ITA = { country_event = { id = ww1buff_ita.1 } }
+					GER = { country_event = { id = ww1buff_ita.1 } }
+				}
+				if = {
+					limit = {
+						ITA = {
+							check_variable = { var = ger_temp_diplo_influence value = 0 compare = greater_than }
+							OR = {
+								NOT = { has_country_flag = ITA_indecisive_ally_germany_lead_flag }
+								has_country_flag = ITA_indecisive_ally_france_lead_flag
+							}
+						}
+					}
+					ITA = {
+						clr_country_flag = ITA_indecisive_ally_france_lead_flag
+						set_country_flag = ITA_indecisive_ally_germany_lead_flag
+					}
+					ITA = { country_event = { id = ww1buff_ita.2 } }
+					FRA = { country_event = { id = ww1buff_ita.2 } }
+				}
+			}
+			custom_effect_tooltip = ITA_indecisive_ally_decisions_tt
+			effect_tooltip = { add_political_power = ITA.indecisive_ally_influence_pp_total }
+		}
+	}
+}
+
+ITA_indecisive_ally_ita_category = {
+
+	ITA_placate_the_french = {
+
+		icon = eng_trade_unions_support
+
+		allowed = {
+			tag = ITA
+		}
+
+		available = {
+			FRA = {
+				exists = yes
+				has_government = democratic
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				tag = FRA
+			}
+		}
+
+		days_remove = 10
+
+		cost = 10
+
+		fire_only_once = no
+
+		ai_will_do = {
+			factor = 0.1
+			modifier = {
+				factor = 10
+				is_historical_focus_on = yes
+				date > 1940.01.01
+			}
+			modifier = {
+				factor = 0
+				focus_progress = {
+					focus = ITA_ww1_back_france
+					progress > 0
+				}
+			}
+			modifier = {
+				factor = 0
+				focus_progress = {
+					focus = ITA_ww1_back_ger
+					progress > 0
+				}
+			}
+			modifier = {
+				factor = 0
+				ITA = {
+					focus_progress = {
+						focus = ITA_maintain_trade_neutrality
+						progress > 0
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = ITA_indecisive_ally_ai_timer_flag
+				NOT = { date > 1940.01.01 }
+			}
+		}
+
+		visible = {
+			original_tag = ITA
+		}
+
+		complete_effect = {
+		}
+
+		remove_effect = {
+			FRA = { add_to_variable = { var = fra_indecisive_ally_influence value = 5 } }
+			set_variable = { var = fra_temp_diplo_influence value = FRA.fra_indecisive_ally_influence }
+			subtract_from_variable = { var = fra_temp_diplo_influence value = GER.ger_indecisive_ally_influence }
+			set_variable = { var = ger_temp_diplo_influence value = GER.ger_indecisive_ally_influence }
+			subtract_from_variable = { var = ger_temp_diplo_influence value = FRA.fra_indecisive_ally_influence }
+			add_to_variable = { var = indecisive_ally_influence_pp_total value = 10 }
+			hidden_effect = {
+				random_list = {
+					10 = {
+						set_country_flag = { flag = ITA_indecisive_ally_ai_timer_flag value = 1 days = 20 }
+					}
+					10 = {
+						set_country_flag = { flag = ITA_indecisive_ally_ai_timer_flag value = 1 days = 25 }
+					}
+					10 = {
+						set_country_flag = { flag = ITA_indecisive_ally_ai_timer_flag value = 1 days = 30 }
+					}
+					10 = {
+						set_country_flag = { flag = ITA_indecisive_ally_ai_timer_flag value = 1 days = 35 }
+					}
+					10 = {
+						set_country_flag = { flag = ITA_indecisive_ally_ai_timer_flag value = 1 days = 40 }
+					}
+					10 = {
+						set_country_flag = { flag = ITA_indecisive_ally_ai_timer_flag value = 1 days = 45 }
+					}
+					10 = {
+						set_country_flag = { flag = ITA_indecisive_ally_ai_timer_flag value = 1 days = 50 }
+					}
+				}
+				if = {
+					limit = {
+						ITA = {
+							check_variable = { var = fra_temp_diplo_influence value = 0 compare = greater_than }
+							OR = {
+								NOT = { has_country_flag = ITA_indecisive_ally_france_lead_flag }
+								has_country_flag = ITA_indecisive_ally_germany_lead_flag
+							}
+						}
+					}
+					clr_country_flag = ITA_indecisive_ally_germany_lead_flag
+					set_country_flag = ITA_indecisive_ally_france_lead_flag
+					country_event = { id = ww1buff_ita.1 }
+					GER = { country_event = { id = ww1buff_ita.1 } }
+				}
+				if = {
+					limit = {
+						ITA = {
+							check_variable = { var = ger_temp_diplo_influence value = 0 compare = greater_than }
+							OR = {
+								NOT = { has_country_flag = ITA_indecisive_ally_germany_lead_flag }
+								has_country_flag = ITA_indecisive_ally_france_lead_flag
+							}
+						}
+					}
+					clr_country_flag = ITA_indecisive_ally_france_lead_flag
+					set_country_flag = ITA_indecisive_ally_germany_lead_flag
+					country_event = { id = ww1buff_ita.2 }
+					FRA = { country_event = { id = ww1buff_ita.2 } }
+				}
+			}
+		}
+	}
+
+	ITA_placate_the_germans = {
+
+		icon = eng_trade_unions_support
+
+		allowed = {
+			tag = ITA
+		}
+
+		available = {
+			GER = {
+				exists = yes
+				has_government = neutrality
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				tag = GER
+			}
+		}
+
+		days_remove = 10
+
+		cost = 10
+
+		fire_only_once = no
+
+		ai_will_do = {
+			factor = 0.1
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				date > 1940.01.01
+			}
+			modifier = {
+				factor = 0
+				focus_progress = {
+					focus = ITA_ww1_back_france
+					progress > 0
+				}
+			}
+			modifier = {
+				factor = 0
+				focus_progress = {
+					focus = ITA_ww1_back_ger
+					progress > 0
+				}
+			}
+			modifier = {
+				factor = 0
+				ITA = {
+					focus_progress = {
+						focus = ITA_maintain_trade_neutrality
+						progress > 0
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = ITA_indecisive_ally_ai_timer_flag
+				NOT = { date > 1940.01.01 }
+			}
+		}
+
+		visible = {
+			original_tag = ITA
+		}
+
+		complete_effect = {
+		}
+
+		remove_effect = {
+			GER = { add_to_variable = { var = ger_indecisive_ally_influence value = 5 } }
+			set_variable = { var = ger_temp_diplo_influence value = GER.ger_indecisive_ally_influence }
+			subtract_from_variable = { var = ger_temp_diplo_influence value = FRA.fra_indecisive_ally_influence }
+			set_variable = { var = fra_temp_diplo_influence value = FRA.fra_indecisive_ally_influence }
+			subtract_from_variable = { var = fra_temp_diplo_influence value = GER.ger_indecisive_ally_influence }
+			add_to_variable = { var = indecisive_ally_influence_pp_total value = 10 }
+			hidden_effect = {
+				random_list = {
+					10 = {
+						set_country_flag = { flag = ITA_indecisive_ally_ai_timer_flag value = 1 days = 20 }
+					}
+					10 = {
+						set_country_flag = { flag = ITA_indecisive_ally_ai_timer_flag value = 1 days = 25 }
+					}
+					10 = {
+						set_country_flag = { flag = ITA_indecisive_ally_ai_timer_flag value = 1 days = 30 }
+					}
+					10 = {
+						set_country_flag = { flag = ITA_indecisive_ally_ai_timer_flag value = 1 days = 35 }
+					}
+					10 = {
+						set_country_flag = { flag = ITA_indecisive_ally_ai_timer_flag value = 1 days = 40 }
+					}
+					10 = {
+						set_country_flag = { flag = ITA_indecisive_ally_ai_timer_flag value = 1 days = 45 }
+					}
+					10 = {
+						set_country_flag = { flag = ITA_indecisive_ally_ai_timer_flag value = 1 days = 50 }
+					}
+				}
+				if = {
+					limit = {
+						ITA = {
+							check_variable = { var = fra_temp_diplo_influence value = 0 compare = greater_than }
+							OR = {
+								NOT = { has_country_flag = ITA_indecisive_ally_france_lead_flag }
+								has_country_flag = ITA_indecisive_ally_germany_lead_flag
+							}
+						}
+					}
+					clr_country_flag = ITA_indecisive_ally_germany_lead_flag
+					set_country_flag = ITA_indecisive_ally_france_lead_flag
+					country_event = { id = ww1buff_ita.1 }
+					GER = { country_event = { id = ww1buff_ita.1 } }
+				}
+				if = {
+					limit = {
+						ITA = {
+							check_variable = { var = ger_temp_diplo_influence value = 0 compare = greater_than }
+							OR = {
+								NOT = { has_country_flag = ITA_indecisive_ally_germany_lead_flag }
+								has_country_flag = ITA_indecisive_ally_france_lead_flag
+							}
+						}
+					}
+					clr_country_flag = ITA_indecisive_ally_france_lead_flag
+					set_country_flag = ITA_indecisive_ally_germany_lead_flag
+					country_event = { id = ww1buff_ita.2 }
+					FRA = { country_event = { id = ww1buff_ita.2 } }
+				}
+			}
+		}
+	}
+
+}

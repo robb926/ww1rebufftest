@@ -1,0 +1,71 @@
+﻿###################################################################
+
+units = {
+	division= { 
+			name = "1. Guizhou Revolutionary Cavalry"
+			location=4504 # Guiyang
+			division_template="Qibing Jun"
+			start_experience_factor=0.5
+			}
+	
+
+	
+	division= { 
+			name = "1. Fujian Revolutionary Cavalry"
+			location=4196 # Fuzhou
+			division_template="Qibing Jun"
+			start_experience_factor=0.5
+			}
+	
+	
+	division= { 
+			name = "1. Chongqing Revolutionary Cavalry"
+			location=6999 # Chongqing
+			division_template="Qibing Jun"
+			start_experience_factor=0.5
+			}
+	
+	
+	division= { 
+			name = "1. Sichuan Revolutionary Cavalry"
+			location=4925 # Chengdu
+			division_template="Qibing Jun"
+			start_experience_factor=0.5
+			}
+
+	division= { 
+			name = "1. Shaanxi Revolutionary Army"
+			location = 4256 # Xi'an
+			division_template="Qibing Shi"
+			start_experience_factor=0.4
+			}
+	
+	
+	division= { 
+			name = "1. Shanxi Revolutionary Army"
+			location = 12356 # Taiyuan
+			division_template="Qibing Shi"
+			start_experience_factor=0.4
+			}
+	
+	
+	division= { 
+			name = "1. Yunnan Revolutionary Army"
+			location = 8023 # Kunming
+			division_template="Qibing Shi"
+			start_experience_factor=0.4
+			}
+	
+	
+	division= { 
+			name = "2. Yunnan Revolutionary Army"
+			location = 8023 # Kunming
+			division_template="Qibing Shi"
+			start_experience_factor=0.4
+			}
+	
+	}
+air_wings = { 
+	}
+instant_effect = {
+	}
