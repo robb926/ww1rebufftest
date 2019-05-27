@@ -230,10 +230,10 @@ ITA_ww1_carrier_focus_desc:0 "" #KAISER_ANONY
  ITA_ww1_sovereignist_ethos:0 "Sovereignist Ethos"
  ITA_ww1_sovereignist_ethos_desc:0 "" #KAISER_ANONY
 
- ITA_ww1_support_republic:0 "Reinforce the Royal Authority"
+ ITA_ww1_support_republic:0 "Reinforce the Parliament"
  ITA_ww1_support_republic_desc:0 "" #KAISER_ANONY
 
- ITA_ww1_contest_republic:0 "Contest the Royal Authority"
+ ITA_ww1_contest_republic:0 "Contest the Parliament"
  ITA_ww1_contest_republic_desc:0 "" #KAISER_ANONY
 
  ITA_ww1_internationalism_focus:0 "Internationalism Focus"
