@@ -16,7 +16,7 @@ ideas={
 			}
 	naval_manufacturer={
 			designer = yes 
-			albanian_shipyard={ allowed={ TAG=ALB } research_bonus={ naval_equipment=0.10 } traits={ naval_manufacturer } picture=generic_naval_manufacturer_2 }
+			albanian_shipyard={ allowed={ TAG=ALB } research_bonus={ naval_equipment=0.10 } traits={ coastal_defence_naval_manufacturer } picture=generic_naval_manufacturer_2 }
 			}
 	materiel_manufacturer={
 			designer = yes 
