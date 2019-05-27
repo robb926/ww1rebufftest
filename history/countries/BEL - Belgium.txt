@@ -1,4 +1,4 @@
-﻿capital = 6
+t﻿capital = 6
 
 #-------------------------------------------------------
 #					GENERIC VALUES
@@ -11,7 +11,7 @@ set_convoys = 80
 #-------------------------------------------------------
 #					POLITICS & ARMY
 #-------------------------------------------------------
-create_country_leader={ name = "Albert I" desc=BEL_albert_i_DESC picture="gfx/hoi4tgw_portraits/BEL/country_leaders/BEL_King_Albert.dds" expire="1935.1.1" ideology=liberalism traits={  } }
+create_country_leader={ name = "Albert I" desc=BEL_albert_i_DESC picture="gfx/hoi4tgw_portraits/BEL/country_leaders/BEL_King_Albert.dds" expire="1935.1.1" ideology=despotism traits={  } }
 
 create_field_marshal={
 	name = "Albert I" id=9009
